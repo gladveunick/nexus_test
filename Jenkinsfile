@@ -44,7 +44,7 @@ pipeline {
         stage('Test Connectivity') {
             steps {
                 script {
-                    def nexusUrl = "http://127.0.0.1:8081/repository/entrainement/"
+                    def nexusUrl = "http://127.0.0.1:8081"
                     def command = "curl -I ${nexusUrl}"
                     def output = bat(script: command, returnStdout: true).trim()
                     echo "Output from curl command:"
