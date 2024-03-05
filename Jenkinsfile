@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        tage('Test Connectivity') {
+        stage('Test Connectivity') {
             steps {
                 script {
                     def nexusUrl = "http://127.0.0.1:8081/repository/entrainement/"
