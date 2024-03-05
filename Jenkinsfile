@@ -50,13 +50,11 @@ pipeline {
                     def packaging = "jar" // Le packaging est généralement "jar" pour les projets Java
                     
                     // Rechercher l'artifact construit dans le dossier cible
-                    filesByGlob = findFiles(glob: "target/*.${packaging}")
-                    // Afficher quelques informations sur l'artifact trouvé
-                    echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
-                    // Extraire le chemin du fichier trouvé
-                    artifactPath = filesByGlob[0].path
+                    def files = bat script: 'dir /b /s target\\*.jar', returnStdout: true
+                    def artifactPath = files.split("\\r?\\n")[0].trim()
+
                     // Affecter une réponse booléenne vérifiant si le nom de l'artifact existe
-                    artifactExists = fileExists(artifactPath)
+                    def artifactExists = fileExists(artifactPath)
 
                     if (artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${groupId}, packaging: ${packaging}, version ${version}"
