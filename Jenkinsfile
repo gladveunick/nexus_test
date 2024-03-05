@@ -7,6 +7,7 @@ pipeline {
 
   environment {
       def mvn = tool 'M3'
+      
 
       NEXUS_VERSION = "nexus3"
       NEXUS_PROTOCOL = "http"
@@ -25,7 +26,7 @@ pipeline {
 
     stage('Maven build') {
       steps {
-        bat "\"${mvn}\" clean package"
+         bat "\"${mvn}\\bin\\mvn\" clean package"
       }
     }
 
