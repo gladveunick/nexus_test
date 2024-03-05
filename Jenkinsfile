@@ -29,6 +29,16 @@ pipeline {
          bat "\"${mvn}\\bin\\mvn\" clean package"
       }
     }
+    stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('sonar-server') {
+            script {
+                def mvnHome = tool 'M3'
+                bat "\"${mvnHome}/bin/mvn\" clean verify sonar:sonar -Dsonar.projectKey=toto-gros -Dsonar.projectName=toto-gros"
+            }
+        }
+    }
+}
 
    // stage('SonarQube Analysis') {
       //steps{
