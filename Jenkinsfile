@@ -10,7 +10,7 @@ pipeline {
 
       NEXUS_VERSION = "nexus3"
       NEXUS_PROTOCOL = "http"
-      NEXUS_URL = "172.18.0.4:8081"
+      NEXUS_URL = "http://localhost:8081"
       NEXUS_REPOSITORY = "entrainement"
       NEXUS_CREDENTIAL_ID = "NEXUS_CREDENTIAL"
       ARTIFACT_VERSION = "${BUILD_NUMBER}"
