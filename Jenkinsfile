@@ -29,6 +29,18 @@ pipeline {
             }
         }
 
+        tage('Test Connectivity') {
+            steps {
+                script {
+                    def nexusUrl = "http://127.0.0.1:8081/repository/entrainement/"
+                    def command = "powershell.exe -Command \"(Invoke-WebRequest -Uri '${nexusUrl}').Headers\""
+                    def output = bat(script: command, returnStdout: true).trim()
+                    echo "Output from PowerShell command:"
+                    echo output
+                }
+            }
+        }
+
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
