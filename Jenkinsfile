@@ -9,8 +9,8 @@ pipeline {
         def mvn = tool 'M3'
 
         NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://localhost:8081"
+        // NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "http://127.0.0.1:8081/"
         NEXUS_REPOSITORY = "entrainement"
         NEXUS_CREDENTIAL_ID = "NEXUS_CREDENTIAL"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
@@ -62,7 +62,7 @@ pipeline {
                         // Téléverser l'artifact vers Nexus
                         nexusArtifactUploader(
                             nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
+                            // protocol: NEXUS_PROTOCOL,
                             nexusUrl: NEXUS_URL,
                             groupId: groupId,
                             version: version,
