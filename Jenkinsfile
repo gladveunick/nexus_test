@@ -8,7 +8,8 @@ pipeline {
     environment {
         def mvn = tool 'M3'
 
-        NEXUS_VERSION = "nexus3"
+        // NEXUS_VERSION = "nexus3"
+        NEXUS_VERSION = "Sonatype Nexus Repository OSS 3.65.0-02"
         // NEXUS_PROTOCOL = "http"
         NEXUS_URL = "http://127.0.0.1:8081"
         NEXUS_REPOSITORY = "entrainement"
