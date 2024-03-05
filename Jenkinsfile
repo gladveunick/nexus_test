@@ -1,11 +1,12 @@
 pipeline {
-  agent {label'mon_agent'}
+  agent {any
+        }
   tools {
-    maven "maven"
+    maven "M3"
   }
 
   environment {
-      def mvn = tool 'maven'
+      def mvn = tool 'M3'
 
       NEXUS_VERSION = "nexus3"
       NEXUS_PROTOCOL = "http"
