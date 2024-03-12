@@ -8,10 +8,10 @@ pipeline {
     environment {
         def mvn = tool 'M3'
 
-        // NEXUS_VERSION = "nexus3"
+        NEXUS_VERSION = "nexus3"
         NEXUS_VERSION = "Sonatype Nexus Repository OSS 3.65.0-02"
-        // NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://localhost:8081/"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "http://localhost:8081/repository/maven-nexus-repo/"
         NEXUS_REPOSITORY = "maven-nexus-repo"
         NEXUS_CREDENTIAL_ID = "jenkins-user"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
@@ -76,7 +76,7 @@ pipeline {
                         // Téléverser l'artifact vers Nexus
                         nexusArtifactUploader(
                             nexusVersion: NEXUS_VERSION,
-                            // protocol: NEXUS_PROTOCOL,
+                            protocol: NEXUS_PROTOCOL,
                             nexusUrl: NEXUS_URL,
                             groupId: groupId,
                             version: version,
