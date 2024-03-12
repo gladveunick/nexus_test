@@ -12,7 +12,7 @@ pipeline {
         NEXUS_VERSION = "Sonatype Nexus Repository OSS 3.65.0-02"
         // NEXUS_PROTOCOL = "http"
         NEXUS_URL = "http://localhost:8081/"
-        NEXUS_REPOSITORY = "entrainement"
+        NEXUS_REPOSITORY = "maven-nexus-repo"
         NEXUS_CREDENTIAL_ID = "jenkins-user"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
     }
