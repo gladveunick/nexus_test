@@ -11,7 +11,7 @@ pipeline {
         //NEXUS_VERSION = "nexus3"
         NEXUS_VERSION = "Sonatype Nexus Repository OSS 3.65.0-02"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://localhost:8081"
+        NEXUS_URL = "127.0.0.1:8081"
         NEXUS_REPOSITORY = "maven-nexus-repo"
         NEXUS_CREDENTIAL_ID = "nexusCredential"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
@@ -94,19 +94,19 @@ pipeline {
                 }
             }
         }
-        stage ('Execute Ansible Play - CD'){
-            agent {
-                label 'ansible'
-            }
-            steps{
-                script {
-                    git branch: 'feature/ansibleNexus', url: 'https://github.com/ranjit4github/Ansible_Demo_Project.git';
-                }
-                sh '''
-                    ansible-playbook -e vers=${BUILD_NUMBER} roles/site.yml
-                '''
-            }
-        }
+        // stage ('Execute Ansible Play - CD'){
+        //     agent {
+        //         label 'ansible'
+        //     }
+        //     steps{
+        //         script {
+        //             git branch: 'feature/ansibleNexus', url: 'https://github.com/ranjit4github/Ansible_Demo_Project.git';
+        //         }
+        //         sh '''
+        //             ansible-playbook -e vers=${BUILD_NUMBER} roles/site.yml
+        //         '''
+        //     }
+        // }
     }
 }
 
