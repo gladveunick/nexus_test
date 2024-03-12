@@ -13,7 +13,7 @@ pipeline {
         // NEXUS_PROTOCOL = "http"
         NEXUS_URL = "http://localhost:8081/"
         NEXUS_REPOSITORY = "entrainement"
-        NEXUS_CREDENTIAL_ID = "NEXUS_CREDENTIAL"
+        NEXUS_CREDENTIAL_ID = "jenkins-user"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
     }
   
