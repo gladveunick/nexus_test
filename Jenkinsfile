@@ -11,7 +11,7 @@ pipeline {
         NEXUS_VERSION = "Sonatype Nexus Repository OSS 3.65.0-02"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "localhost:8081/repository/toto-gros/"
-        NEXUS_REPOSITORY = "entrainement"
+        NEXUS_REPOSITORY = "toto-gros"
         NEXUS_CREDENTIAL_ID = "user-deploy"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
     }
