@@ -34,7 +34,7 @@ pipeline {
                 withSonarQubeEnv('sonarqube') {
                     script {
                         def mvnHome = tool 'M3'
-                        bat "\"${mvnHome}\\bin\\mvn\" clean verify sonar:sonar -Dsonar.projectKey=nexus_test -Dsonar.projectName=nexus_test -Dsonar.login=sqp_dc4e42156107de753613f546f0dae226ac000e93 -Dsonar.host.url=http://localhost:9000"
+                        bat "\"${mvnHome}\\bin\\mvn\" clean verify sonar:sonar -Dsonar.projectKey=nexus_test -Dsonar.projectName=nexus_test -Dsonar.login=sqp_de98f466dd77914e5bc71cb0e34f24c966153cf7 -Dsonar.host.url=http://localhost:9000"
                     }
                 }
             }
